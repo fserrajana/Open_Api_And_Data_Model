@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "1b462247-e99c-4a58-bbe4-16436a5c892d",
+		"name": "Retails",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtención Token RIPLEY",
+			"id": "f74f8e61-6281-4cab-8289-5bf7a9b561f4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "71f32adb-7729-42bf-8f36-62d26aaaa20f",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "6096f1ed-673f-42a5-9312-dbf473a4295c",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://apiexternaluat.entel.cl/auth/oauth/v2/token"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtención Token RIPLEY Producción",
+			"id": "c9b9ae63-7d70-4b1e-a1da-97330254bfc5",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "71f32adb-7729-42bf-8f36-62d26aaaa20f",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "6096f1ed-673f-42a5-9312-dbf473a4295c",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://apiexternaluat.entel.cl/auth/oauth/v2/token"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtención Token HITES",
+			"id": "e6192f90-65af-4bb7-8fc7-6a0db582c07d",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "71f32adb-7729-42bf-8f36-62d26aaaa20f",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "6096f1ed-673f-42a5-9312-dbf473a4295c",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://apiexternaluat.entel.cl/auth/oauth/v2/token"
+			},
+			"response": []
+		},
+		{
+			"name": "Evaluación Comercial",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f157a9a6-8e84-4e78-9540-6a3b1193b244",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"id": "2f587fe9-c590-4942-963f-c884ad52e685",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "3f89cf7c-9185-4fe8-a734-785b7e67844b"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"header\": {\r\n\t\t\"consumerId\": \"\",\r\n\t\t\"applicationCode\": \"\",\r\n\t\t\"countryCode\": \"\",\r\n\t\t\"requestTimestamp\": \"\"\r\n\t},\r\n\"reqConsultaCredito\" : [{\r\n    \"timestamp\" : \"2018-05-15T00:00:00.000-04:00\",\r\n    \"storeId\" : \"10004000\",\r\n    \"terminalId\" : \"123456123456\",\r\n    \"retailId\" : \"RIPLEY\",\r\n    \"descStore\" : \"PARQUE ARAUCO\",\r\n    \"tipoEvaluacion\" : \"\",\r\n    \"codigoBiometria\" : \"\",\r\n    \"huella\" : \"\",\r\n    \"informacionComercial\" : \"\",\r\n    \"cliente\" : [{\r\n      \"idTipoDocumento\" : \"1\",\r\n      \"idNroDocumento\" : \"12697083\",\r\n      \"dv\" : \"8\",\r\n      \"serie\" : \"000000000\",\r\n      \"tipo\" : \"\",\r\n      \"edad\" : \"\",\r\n      \"tipoCalle\" : \"\",\r\n      \"nombreCalle\" : \"\",\r\n      \"nroCasa\" : \"\",\r\n      \"nroDepto\" : \"\",\r\n      \"codigoPostal\" : \"\",\r\n      \"obs1\" : \"\",\r\n      \"ciudad\" : \"\",\r\n      \"comuna\" : \"\",\r\n      \"state\" : \"\",\r\n      \"pais\" : \"\"\r\n    }],\r\n    \"acreditacion\" : [{\r\n      \"idTipoAcreditacion\" : \"\",\r\n      \"nroTipoAcreditacion\" : \"\",\r\n      \"idNombreEntidad\" : \"\",\r\n      \"montoDisponible\" : \"\",\r\n      \"mesVencimiento\" :  \"\",\r\n      \"anioVencimiento\" : \"\",\r\n      \"obs1\" : \"\",\r\n      \"obs2\" : \"\",\r\n      \"obs3\" : \"\",\r\n      \"obs4\" : \"\"\r\n    }]\r\n  }]\r\n}\r\n"
+				},
+				"url": "https://apiexternaluat.entel.cl/legacy/v1/evaluacionComercialEntelRetail"
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Portabilidad",
+			"id": "50c390fe-54d9-4db6-8b5a-f79592343b27",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "3285f82e-e975-4d25-b0b5-5ded7bfb638c"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"validaPortabilidadReq\" : [{\r\n    \"reqValidaPortabilidad\" : [{\r\n      \"timestamp\" : \"2018-05-15T00:00:00.000-04:00\",\r\n      \"storeId\" : \"10004000\",\r\n      \"terminalId\" : \"1269708384\",\r\n      \"retailId\" : \"RIPLEY\",\r\n      \"idTipoDocumento\" : \"1\",\r\n      \"idNroDocumento\" : \"12697083\",\r\n      \"dv\" : \"8\",\r\n      \"serie\" : \"000000000\",\r\n      \"tipo\" : \"\",\r\n      \"listaTelefono\" : [{\r\n        \"telElem\" : [{\r\n          \"numeroCel\" : \"56998859911\",\r\n          \"imei\" : \"359410087255863\"\r\n        }]\r\n      }],\r\n      \"idComuna\" : \"13110\",\r\n      \"operador\" : \"4\",\r\n      \"modalidad\" : \"2\",\r\n      \"docPortabilidad\" : [{\r\n        \"nombre\" : \"\",\r\n        \"mimeType\" : \"\",\r\n        \"peso\" : \"\",\r\n        \"docCodificado\" : \"\"\r\n      }]\r\n    }]\r\n  }]\r\n}\r\n"
+				},
+				"url": "https://apiexternaluat.entel.cl/legacy/v1/consultarPortabilidadEntelRetail"
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Numeración",
+			"id": "82e5bf35-e210-4b65-8127-eaf151e3e545",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "3233d61b-729e-4835-bc86-dbe85933abc6"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"consultaNumeroCelReq\" : [{\r\n    \"reqConsultaNumeroCel\" : [{\r\n      \"timestamp\" : \"2018-05-15T00:00:00.000-04:00\",\r\n      \"storeId\" : \"10004000\",\r\n      \"terminalId\" : \"1269708384\",\r\n      \"retailId\" : \"RIPLEY\",\r\n      \"puntoVenta\" : \"\",\r\n      \"flujoVenta\" : \"\",\r\n      \"datosCliente\" : [{\r\n        \"rut\" : \"12697083\",\r\n        \"comuna\" : \"13110\"\r\n      }],\r\n      \"datosEvaluacion\" : [{\r\n        \"resultadoEvaluacion\" : [{\r\n          \"idEnganche\" : \"78250197\"\r\n        }]\r\n      }],\r\n      \"datosPlanes\" : [{\r\n        \"datosPlanesElem\" : [{\r\n          \"codPlan\" : \"\",\r\n          \"iccid\" : \"\"\r\n        }]\r\n      }],\r\n      \"datosTelefono\" : [{\r\n        \"datosTelElem\" : [{\r\n          \"imei\" : \"\",\r\n          \"nroTelefono\" : \"\",\r\n          \"tipoEquipo\" : \"\"\r\n        }]\r\n      }],\r\n      \"datosPago\" : [{\r\n        \"cicloFacturacion\" : \"\"\r\n      }],\r\n      \"datosPortabilidad\" : [{\r\n        \"idOperadorDonante\" : \"\",\r\n        \"modalidadEquipo\" : \"\",\r\n        \"tipoEquipo\" : \"\",\r\n        \"cap\" : \"\"\r\n      }],\r\n      \"obs1\" : \"\",\r\n      \"obs2\" : \"\"\r\n    }]\r\n  }]\r\n}\r\n"
+				},
+				"url": "https://apiexternaluat.entel.cl/legacy/v1/consultarNumeracionEntelRetail"
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Migración",
+			"id": "9d7fe6b3-0610-4dc9-8652-556d89a98e10",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "0a9f785b-8945-4f0a-a4ab-20d924cb2b19"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"consultaMigracionReq\" : [{\r\n    \"reqConsultaMigracion\" : [{\r\n      \"storeId\" : \"10004000\",\r\n      \"terminalId\" : \"1269708383\",\r\n      \"retailId\" : \"RIPLEY\",\r\n      \"timestamp\" : \"2018-05-15T00:00:00.000-04:00\",\r\n      \"numeroCel\" : \"56998859911\",\r\n      \"idTipoDocumento\" : \"1\",\r\n      \"rut\" : \"12697083\",\r\n      \"dv\" : \"8\",\r\n      \"obs1\" : \"\",\r\n      \"obs2\" : \"\"\r\n    }]\r\n  }]\r\n}\r\n"
+				},
+				"url": "https://apiexternaluat.entel.cl/legacy/v1/consultarMigracionEntelRetail"
+			},
+			"response": []
+		},
+		{
+			"name": "Enviar Contrato",
+			"id": "4aa2fbff-4fc4-49b8-b903-140ec7a8b475",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "7588ddd9-e5e5-4747-b26f-22ed564d9c88"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"contratoClienteReq\": [{\r\n\t\t\"reqContratoCliente\": [{\r\n\t\t\t\"timestamp\": \"\",\r\n\t\t\t\"storeId\": \"\",\r\n\t\t\t\"terminalId\": \"\",\r\n\t\t\t\"retailId\": \"HITES\",\r\n\t\t\t\"tipoHabilitacion\": \"\",\r\n\t\t\t\"descStore\": \"\",\r\n\t\t\t\"datosCliente\": [{\r\n\t\t\t\t\"idTipoDocumento\": \"\",\r\n\t\t\t\t\"rut\": \"\",\r\n\t\t\t\t\"dv\": \"\",\r\n\t\t\t\t\"serie\": \"\",\r\n\t\t\t\t\"titulo\": \"\",\r\n\t\t\t\t\"genero\": \"\",\r\n\t\t\t\t\"estadoCivil\": \"\",\r\n\t\t\t\t\"tipoCliente\": \"\",\r\n\t\t\t\t\"nombre\": \"\",\r\n\t\t\t\t\"apellidoP\": \"\",\r\n\t\t\t\t\"apellidoM\": \"\",\r\n\t\t\t\t\"direccion\": \"\",\r\n\t\t\t\t\"tipoCalle\": \"\",\r\n\t\t\t\t\"nombreCalle\": \"\",\r\n\t\t\t\t\"nroCasa\": \"\",\r\n\t\t\t\t\"nroDepto\": \"\",\r\n\t\t\t\t\"codigoPostal\": \"\",\r\n\t\t\t\t\"obs1\": \"\",\r\n\t\t\t\t\"nroTelMovil\": \"\",\r\n\t\t\t\t\"nroTelFijo\": \"\",\r\n\t\t\t\t\"ciudad\": \"\",\r\n\t\t\t\t\"comuna\": \"\",\r\n\t\t\t\t\"state\": \"\",\r\n\t\t\t\t\"pais\": \"\",\r\n\t\t\t\t\"email\": \"\"\r\n\t\t\t}],\r\n\t\t\t\"datosEvaluacion\": [{\r\n\t\t\t\t\"idTipoAcreditacion\": \"\",\r\n\t\t\t\t\"nroTipoAcreditacion\": \"\",\r\n\t\t\t\t\"idNombreEntidad\": \"\",\r\n\t\t\t\t\"montoDisponible\": \"\",\r\n\t\t\t\t\"idTipoPago\": \"\",\r\n\t\t\t\t\"mesVencimiento\": \"\",\r\n\t\t\t\t\"anioVencimiento\": \"\",\r\n\t\t\t\t\"obs1\": \"\",\r\n\t\t\t\t\"obs2\": \"\",\r\n\t\t\t\t\"obs3\": \"\",\r\n\t\t\t\t\"obs4\": \"\",\r\n\t\t\t\t\"resultadoEvaluacion\": [{\r\n\t\t\t\t\t\"clasificacionCliente\": \"\",\r\n\t\t\t\t\t\"descripcionCliente\": \"\",\r\n\t\t\t\t\t\"numeroLineas\": \"2\",\r\n\t\t\t\t\t\"idEnganche\": \"\",\r\n\t\t\t\t\t\"descripcionMontoCredito\": [{\r\n\t\t\t\t\t\t\"descMontoCreditoElem\": [{\r\n\t\t\t\t\t\t\t\"idTipoEquipo\": \"\",\r\n\t\t\t\t\t\t\t\"tipoPlan\": \"\",\r\n\t\t\t\t\t\t\t\"montoCreditoPlan\": \"\",\r\n\t\t\t\t\t\t\t\"obs1\": \"\"\r\n\t\t\t\t\t\t}]\r\n\t\t\t\t\t}],\r\n\t\t\t\t\t\"ventaConPat\": \"\",\r\n\t\t\t\t\t\"tipoTarifa\": \"\",\r\n\t\t\t\t\t\"documentosAcreditacion\": [{\r\n\t\t\t\t\t\t\"dctoAcredElem\": [{\r\n\t\t\t\t\t\t\t\"docAcreditacion\": \"\"\r\n\t\t\t\t\t\t}]\r\n\t\t\t\t\t}]\r\n\t\t\t\t}]\r\n\t\t\t}],\r\n\t\t\t\"datosPlan\": [{\r\n\t\t\t\t\"cantidadLineas\": \"\",\r\n\t\t\t\t\"listaDatosPlanes\": [{\r\n\t\t\t\t\t\"datosPlanElem\": [{\r\n\t\t\t\t\t\t\"codPlan\": \"\",\r\n\t\t\t\t\t\t\"nombrePlan\": \"\",\r\n\t\t\t\t\t\t\"numeroCel1\": \"\",\r\n\t\t\t\t\t\t\"numeroCel2\": \"\",\r\n\t\t\t\t\t\t\"serie\": \"\",\r\n\t\t\t\t\t\t\"tipoSim\": \"\",\r\n\t\t\t\t\t\t\"patente\": \"\"\r\n\r\n\t\t\t\t\t}]\r\n\t\t\t\t}]\r\n\t\t\t}],\r\n\t\t\t\"datosTelefono\": [{\r\n\t\t\t\t\"datosTelefonoElem\": [{\r\n\t\t\t\t\t\"descripcionCelular\": \"\",\r\n\t\t\t\t\t\"imei\": \"\",\r\n\t\t\t\t\t\"idInternoCel\": \"\",\r\n\t\t\t\t\t\"tipoCel\": \"\"\r\n\t\t\t\t}]\r\n\t\t\t}],\r\n\t\t\t\"datosPago\": [{\r\n\t\t\t\t\"nroBoleta\": \"\",\r\n\t\t\t\t\"montoCancelado\": \"\",\r\n\t\t\t\t\"local\": \"\",\r\n\t\t\t\t\"terminal\": \"\",\r\n\t\t\t\t\"idVendedor\": \"\",\r\n\t\t\t\t\"numeroTelefonicoTienda\": \"\",\r\n\t\t\t\t\"cicloFacturacion\": \"\",\r\n\t\t\t\t\"vencimiento\": \"\"\r\n\t\t\t}],\r\n\t\t\t\"datosPortabilidad\": [{\r\n\t\t\t\t\"cap\": \"\",\r\n\t\t\t\t\"nroConsultaOAP\": \"\",\r\n\t\t\t\t\"nroPortabilidadInt\": \"\",\r\n\t\t\t\t\"nroSolicitudOAP\": \"\",\r\n\t\t\t\t\"modalidadServActual\": \"\",\r\n\t\t\t\t\"tipoEquipo\": \"\",\r\n\t\t\t\t\"tipoServicio\": \"\",\r\n\t\t\t\t\"tipoSubscriptor\": \"\",\r\n\t\t\t\t\"idOperadorDonante\": \"\",\r\n\t\t\t\t\"documentosPortabilidad\": [{\r\n\t\t\t\t\t\"dctosPortabilidadElem\": [{\r\n\t\t\t\t\t\t\"nombre\": \"\",\r\n\t\t\t\t\t\t\"mimeType\": \"\",\r\n\t\t\t\t\t\t\"peso\": \"\"\r\n\t\t\t\t\t}]\r\n\t\t\t\t}]\r\n\t\t\t}],\r\n\t\t\t\"documentoContrato\": [{\r\n\t\t\t\t\"numeroFolio\": \"\",\r\n\t\t\t\t\"tipoVenta\": \"\",\r\n\t\t\t\t\"idVentaTelco\": \"\",\r\n\t\t\t\t\"nombre\": \"\",\r\n\t\t\t\t\"mimeType\": \"\",\r\n\t\t\t\t\"peso\": \"\",\r\n\t\t\t\t\"docCodificado\": \"\",\r\n\t\t\t\t\"obs1\": \"\",\r\n\t\t\t\t\"obs2\": \"\",\r\n\t\t\t\t\"obs3\": \"\",\r\n\t\t\t\t\"obs4\": \"\",\r\n\t\t\t\t\"obs5\": \"\",\r\n\t\t\t\t\"obs6\": \"\",\r\n\t\t\t\t\"obs7\": \"\",\r\n\t\t\t\t\"obs8\": \"\",\r\n\t\t\t\t\"obs9\": \"\",\r\n\t\t\t\t\"obs10\": \"\"\r\n\t\t\t}]\r\n\t\t}]\r\n\t}]\r\n}\r\n"
+				},
+				"url": "https://apiexternaluat.entel.cl/legacy/v1/enviarContratoEntelRetail"
+			},
+			"response": []
+		}
+	]
+}
